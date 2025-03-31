@@ -496,6 +496,7 @@
     <script src="static/js/components/carousel.js"></script>
     <script src="static/js/components/floor-plans.js"></script>
     <script src="static/js/components/project-slider.js"></script>
+    <script src="static/js/config.js"></script>
     <script src="static/js/components/air-quality.js"></script>
     <script src="static/js/components/air-quality-historical.js"></script>
     <script src="static/js/enhancements.js"></script>
@@ -504,19 +505,16 @@
     <!-- Initialize Air Quality Widget -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // OpenWeatherMap API key
-            const apiKey = 'deb4e5e7881a93fbde4526c113e4394a';
+            // Use environment variables from config.js
+            const apiKey = ENV_CONFIG.OPENWEATHER_API_KEY;
+            const locations = ENV_CONFIG.LOCATIONS;
             
-            // Initialize air quality widget with only Yangi Bozor location
-            const airQuality = new AirQualityIndex(apiKey, [
-                { name: 'Янги Бозор', lat: 41.315356, lon: 69.533471 }
-            ]);
+            // Initialize air quality widget
+            const airQuality = new AirQualityIndex(apiKey, locations);
             airQuality.init('air-quality-container');
             
-            // Initialize historical air quality chart with only Yangi Bozor location
-            const airQualityHistorical = new AirQualityHistorical([
-                { name: 'Янги Бозор', lat: 41.315356, lon: 69.533471 }
-            ]);
+            // Initialize historical air quality chart
+            const airQualityHistorical = new AirQualityHistorical(locations);
             airQualityHistorical.init('air-quality-historical-container');
         });
     </script>

@@ -83,6 +83,24 @@
         width: 90%;
         height: 70vh;
     }
+
+    /* Added for better responsiveness */
+    .amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-form-container {
+        flex-direction: column;
+    }
+
+    .contact-form {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .contact-methods {
+        width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -113,7 +131,8 @@
         padding: 80px 0;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
         transition: right 0.3s ease;
-        z-index: 1;
+        z-index: 101;
+        /* Higher than air quality widget */
     }
 
     .nav-links.active {
@@ -197,6 +216,39 @@
         width: 40px;
         height: 40px;
     }
+
+    /* Added for better responsiveness */
+    .amenities-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .feature-card {
+        padding: 20px;
+    }
+
+    .feature-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .contact-method {
+        padding: 15px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* Fix for the air quality widget in hero section */
+    .hero .air-quality-container {
+        position: static;
+        width: auto;
+        max-width: none;
+        margin: 0;
+        transform: none;
+    }
 }
 
 @media (max-width: 576px) {
@@ -208,22 +260,21 @@
         font-size: 18px;
     }
 
+    .header-contact {
+        display: none;
+    }
+
     .hero-content h1 {
         font-size: 30px;
     }
 
     .hero-content p {
         font-size: 14px;
-        margin-bottom: 20px;
     }
 
-    .btn {
-        padding: 10px 25px;
+    .hero-cta-button {
         font-size: 14px;
-    }
-
-    .hero-content {
-        max-width: 100%;
+        padding: 10px 20px;
     }
 
     .section-title {
@@ -232,43 +283,55 @@
     }
 
     .residential-info {
-        padding: 25px 15px;
-        border-radius: 15px;
-    }
-
-    .info-title {
-        font-size: 24px;
-        margin-bottom: 20px;
-        padding-left: 35px;
-    }
-
-    .info-title::before {
-        font-size: 26px;
-    }
-
-    .residential-info li {
-        padding: 12px 15px 12px 35px;
-        margin: 8px 0;
+        padding: 20px 15px;
     }
 
     .info-images {
         grid-template-columns: 1fr;
-        gap: 15px;
     }
 
     .info-images img {
         height: 200px;
     }
 
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
+    .slider-container {
+        height: 50vh;
     }
 
-    .cozy-text .section-title {
-        font-size: 26px;
+    .slider-controls {
+        bottom: 10px;
     }
 
+    .slider-caption {
+        bottom: 60px;
+        left: 20px;
+        right: 20px;
+    }
+
+    .slider-caption h2 {
+        font-size: 24px;
+    }
+
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contact-form {
+        padding: 20px 15px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    input,
+    textarea {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 400px) {
     .cozy-images {
         height: 350px;
     }
@@ -283,123 +346,15 @@
         height: 180px;
     }
 
-    .infinite-carousel .slide-card {
-        min-width: 220px;
-        height: 260px;
-    }
-
-    @keyframes carousel {
-        0% {
-            transform: translateX(0);
-        }
-
-        100% {
-            transform: translateX(calc(-220px * 4 - 80px));
-        }
-    }
-
-    .footer-logo {
-        font-size: 20px;
-    }
-
-    .social-icon {
-        width: 35px;
-        height: 35px;
-    }
-
-    .floor-plan-options {
-        grid-template-columns: 1fr;
-    }
-
-    .plan-info {
-        position: relative;
-        top: auto;
-        right: auto;
-        margin-top: 15px;
-    }
-
-    .floor-plan-main {
-        padding: 10px;
-    }
-
-    .progress-card {
-        flex: 0 0 100%;
-    }
-
-    .slider-container {
-        width: 95%;
-        height: 50vh;
-    }
-
-    .slider-arrow {
-        width: 35px;
-        height: 35px;
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 400px) {
     .hero-content h1 {
         font-size: 26px;
     }
 
-    .hero-content p {
-        font-size: 14px;
+    .social-icons a {
+        margin: 0 5px;
     }
 
-    .btn {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-
-    .section-title {
-        font-size: 24px;
-    }
-
-    .residential-info {
-        padding: 20px 12px;
-    }
-
-    .info-title {
-        font-size: 22px;
-    }
-
-    .infinite-carousel .slide-card {
-        min-width: 200px;
-        height: 230px;
-    }
-
-    @keyframes carousel {
-        0% {
-            transform: translateX(0);
-        }
-
-        100% {
-            transform: translateX(calc(-200px * 4 - 80px));
-        }
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .footer-logo {
-        text-align: center;
-        font-size: 18px;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
-
-    .social-icon {
-        width: 32px;
-        height: 32px;
-    }
-
-    .footer-bottom {
-        margin-top: 30px;
-        padding-top: 15px;
+    .footer-bottom p {
+        font-size: 12px;
     }
 }

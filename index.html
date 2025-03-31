@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="YANGI BOZOR RESIDENCE - премиальный жилой комплекс в Ташкенте. Современное жилье для комфортной и стильной жизни в центре города.">
+    <title>YANGI BOZOR RESIDENCE | Премиальный жилой комплекс</title>
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/enhancements.css">
+    <link rel="stylesheet" href="static/css/components/air-quality.css">
+    <link rel="stylesheet" href="static/css/components/air-quality-historical.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+
+<body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#about" class="skip-to-content">Перейти к содержимому</a>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">YANGI BOZOR RESIDENCE</div>
+                <div class="mobile-menu-toggle" aria-label="Открыть меню">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav aria-label="Основная навигация">
+                    <div class="nav-links">
+                        <a href="#about">О проекте</a>
+                        <a href="#amenities-slider-section">Инфраструктура</a>
+                        <a href="#construction-progress">Другие проекты</a>
+                        <a href="#location">Месторасположение</a>
+                        <a href="#architecture">Архитектура</a>
+                        <a href="#amenities">Удобства</a>
+                        <a href="#contacts">Контакты</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about" aria-label="О проекте">
+        <div class="hero-slide active" style="background-image: url('static/images/55_1.jpg');" aria-hidden="true"></div>
+        <div class="hero-slide" style="background-image: url('static/images/11_1.jpg');" aria-hidden="true"></div>
+        <div class="hero-slide" style="background-image: url('static/images/12_1.jpg');" aria-hidden="true"></div>
+        <div class="hero-overlay"></div>
+        
+        <!-- Air Quality Widget in Hero Section (Right Corner) -->
+        <div id="air-quality-container" class="air-quality-container"></div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1>Премиальный жилой комплекс</h1>
+                <p>Современное жилье для комфортной и стильной жизни в центре города</p>
+                <div class="hero-cta">
+                    <a href="#contacts" class="btn btn-cta">Запланировать просмотр <i class="fas fa-arrow-right"></i></a>
+                    <a href="#floor-plans" class="btn">Посмотреть планировки</a>
+                </div>
+            </div>
+        </div>
+        <div class="slide-nav" aria-label="Навигация по слайдам">
+            <div class="slide-dot active" aria-label="Слайд 1" role="button" tabindex="0"></div>
+            <div class="slide-dot" aria-label="Слайд 2" role="button" tabindex="0"></div>
+            <div class="slide-dot" aria-label="Слайд 3" role="button" tabindex="0"></div>
+        </div>
+    </section>
+
+    <!-- Residential Info Section -->
+    <div class="residential-wrapper">
+        <div class="bg-image left">
+            <img src="static/images/2_1.jpg" alt="Вид на жилой комплекс слева">
+        </div>
+        <div class="bg-image right">
+            <img src="static/images/3_1.jpg" alt="Вид на жилой комплекс справа">
+        </div>
+        <div class="container">
+            <div class="residential-info">
+                <div class="info-content">
+                    <div class="info-item">
+                        <h2 class="info-title">Условия по рассрочке:</h2>
+                        <ul>
+                            <li>При <b>30%</b> оплате - выгода до <b>2%</b></li>
+                            <li>При <b>50%</b> оплате - выгода до <b>5%</b></li>
+                            <li>При <b>70%</b> оплате - выгода до <b>9%</b></li>
+                            <li>При <b>100%</b> оплате - выгода до <b>15%</b></li>
+                        </ul>
+                        <a href="#contacts" class="btn btn-cta">Узнать подробнее</a>
+                    </div>
+                </div>
+                <div class="info-images">
+                    <img src="static/images/11_1.jpg" alt="Вид на жилой комплекс">
+                    <img src="static/images/55_1.jpg" alt="Внутренний двор комплекса">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Amenities Slider Section -->
+    <div class="amenities-slider-section" id="amenities-slider-section">
+        <div class="container">
+            <h2 class="section-title centered">Инфраструктура</h2>
+            <div class="infinite-carousel-container">
+                <div class="infinite-carousel">
+                    <div class="slide-card card">
+                        <img src="static/images/1_1.jpg" alt="Территория комплекса">
+                        <div class="card-overlay">
+                            <h3>Благоустроенная территория</h3>
+                        </div>
+                    </div>
+                    <div class="slide-card card">
+                        <img src="static/images/17_1.jpg" alt="Детская площадка">
+                        <div class="card-overlay">
+                            <h3>Детская площадка</h3>
+                        </div>
+                    </div>
+                    <div class="slide-card card">
+                        <img src="static/images/19_1.jpg" alt="Зона отдыха">
+                        <div class="card-overlay">
+                            <h3>Зона отдыха</h3>
+                        </div>
+                    </div>
+                    <div class="slide-card card">
+                        <img src="static/images/11_1.jpg" alt="Пруд">
+                        <div class="card-overlay">
+                            <h3>Пруд</h3>
+                        </div>
+                    </div>
+                    <!-- Duplicate images for infinite effect -->
+                    <div class="slide-card card">
+                        <img src="static/images/12_1.jpg" alt="Беседка">
+                        <div class="card-overlay">
+                            <h3>Беседка</h3>
+                        </div>
+                    </div>
+                    <div class="slide-card card">
+                        <img src="static/images/16_1.jpg" alt="Парковка">
+                        <div class="card-overlay">
+                            <h3>Парковка</h3>
+                        </div>
+                    </div>
+                    <div class="slide-card card">
+                        <img src="static/images/55_1.jpg" alt="Вход в комплекс">
+                        <div class="card-overlay">
+                            <h3>Вход в комплекс</h3>
+                        </div>
+                    </div>
+                    <div class="slide-card card">
+                        <img src="static/images/65_1.jpg" alt="Спортивная площадка">
+                        <div class="card-overlay">
+                            <h3>Спортивная площадка</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cozy Corner Section -->
+    <div class="cozy-corner-section">
+        <div class="container">
+            <div class="cozy-corner-content">
+                <div class="cozy-text">
+                    <h2 class="section-title" style="font-family: 'Playfair Display', serif;">Уютный уголок вашей
+                        счастливой жизни</h2>
+                    <p>
+                        Во дворе нашего жилого комплекса раскинулся небольшой но очень прекрасный пруд. Эта зона была
+                        специально создана для своеобразного общения с природой. Пруд особенно красив на утренней заре,
+                        когда отражаются первые лучи солнца. Находясь рядом мы и ваши близкие смогут заряжаться
+                        положительной энергией на весь день!
+                    </p>
+                    <a href="#contacts" class="btn btn-cta">Записаться на просмотр</a>
+                </div>
+                <div class="cozy-images">
+                    <div class="image-top">
+                        <img src="static/images/11_1.jpg" alt="Вид на пруд">
+                    </div>
+                    <div class="image-bottom">
+                        <img src="static/images/12_1.jpg" alt="Беседка у пруда">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floor Plans Section -->
+    <section id="floor-plans" aria-label="Планировки квартир">
+        <div class="container">
+            <h2 class="section-title centered">Планировки типового этажа</h2>
+
+            <!-- Main Floor Plan Display -->
+            <div class="floor-plan-main">
+                <img src="static/images/flats_plan/Slide1.jpg" alt="Планировка типового этажа" class="main-plan-image">
+                <div class="plan-info">
+                    <div class="apartment-number">3</div>
+                    <div class="apartment-details">
+                        <span>Комнатная квартира</span>
+                        <span class="area">78,69 м²</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floor Plan Options -->
+            <div class="floor-plan-options">
+                <div class="plan-option card" data-rooms="3" role="button" tabindex="0" aria-label="3-комнатная квартира, 78,69 м²">
+                    <img src="static/images/flats_plan/Slide1.jpg" alt="3-комнатная квартира">
+                    <div class="option-info">
+                        <div class="option-number">3</div>
+                        <div class="option-details">
+                            <span>Комнатная квартира</span>
+                            <span class="area">78,69 м²</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plan-option card" data-rooms="1" role="button" tabindex="0" aria-label="2-комнатная квартира, 63,10 м²">
+                    <img src="static/images/flats_plan/Slide2.jpg" alt="2-комнатная квартира">
+                    <div class="option-info">
+                        <div class="option-number">2</div>
+                        <div class="option-details">
+                            <span>Комнатная квартира</span>
+                            <span class="area">63,10 м²</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plan-option card" data-rooms="1" role="button" tabindex="0" aria-label="1-комнатная квартира, 45,22 м²">
+                    <img src="static/images/flats_plan/Slide3.jpg" alt="1-комнатная квартира">
+                    <div class="option-info">
+                        <div class="option-number">1</div>
+                        <div class="option-details">
+                            <span>Комнатная квартира</span>
+                            <span class="area">45,22 м²</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plan-option card active" data-rooms="1" role="button" tabindex="0" aria-label="1-комнатная квартира, 38,13 м²">
+                    <img src="static/images/flats_plan/Slide4.jpg" alt="1-комнатная квартира">
+                    <div class="option-info">
+                        <div class="option-number">1</div>
+                        <div class="option-details">
+                            <span>Комнатная квартира</span>
+                            <span class="area">38,13 м²</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 30px;">
+                <a href="#contacts" class="btn btn-cta">Получить каталог планировок</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Projects Section -->
+    <section id="construction-progress" aria-label="Другие проекты">
+        <div class="container">
+            <h2 class="section-title centered">Другие проекты</h2>
+            <div class="construction-progress-slider">
+                <div class="progress-card card" data-project="premium" role="button" tabindex="0">
+                    <img src="static/images/construction/real_estate_1.png" alt="Премиум Резиденс">
+                    <div class="project-name">Премиум Резиденс</div>
+                    <div class="project-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">120</span>
+                            <span class="stat-label">Квартир</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">8,500</span>
+                            <span class="stat-label">м² продано</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress-card card" data-project="elite" role="button" tabindex="0">
+                    <img src="static/images/construction/real_estate_2.jpg" alt="Элит Хаус">
+                    <div class="project-name">Элит Хаус</div>
+                    <div class="project-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">85</span>
+                            <span class="stat-label">Квартир</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">6,200</span>
+                            <span class="stat-label">м² продано</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Image Slider Modal -->
+        <div class="project-slider-modal" id="premium-slider" aria-label="Галерея проекта Премиум Резиденс" role="dialog" aria-hidden="true">
+            <div class="slider-close" role="button" tabindex="0" aria-label="Закрыть галерею"><i class="fas fa-times"></i></div>
+            <div class="slider-container">
+                <img src="static/images/construction/real_estate_1.png" class="slider-image active"
+                    alt="Премиум Резиденс 1">
+                <img src="static/images/construction/real_estate_22.jpg" class="slider-image" alt="Премиум Резиденс 2">
+                <img src="static/images/construction/real_estate_33.jpg" class="slider-image" alt="Премиум Резиденс 3">
+                <img src="static/images/construction/real_estate_44.jpg" class="slider-image" alt="Премиум Резиденс 4">
+
+                <div class="slider-arrow slider-prev" role="button" tabindex="0" aria-label="Предыдущее изображение"><i class="fas fa-chevron-left"></i></div>
+                <div class="slider-arrow slider-next" role="button" tabindex="0" aria-label="Следующее изображение"><i class="fas fa-chevron-right"></i></div>
+
+                <div class="slider-nav" aria-label="Навигация по слайдам">
+                    <div class="slider-dot active" role="button" tabindex="0" aria-label="Слайд 1"></div>
+                    <div class="slider-dot" role="button" tabindex="0" aria-label="Слайд 2"></div>
+                    <div class="slider-dot" role="button" tabindex="0" aria-label="Слайд 3"></div>
+                    <div class="slider-dot" role="button" tabindex="0" aria-label="Слайд 4"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-slider-modal" id="elite-slider" aria-label="Галерея проекта Элит Хаус" role="dialog" aria-hidden="true">
+            <div class="slider-close" role="button" tabindex="0" aria-label="Закрыть галерею"><i class="fas fa-times"></i></div>
+            <div class="slider-container">
+                <img src="static/images/construction/elite_1.jpg" class="slider-image active" alt="Элит Хаус 1">
+                <img src="static/images/construction/elite_2.jpg" class="slider-image" alt="Элит Хаус 2">
+                <img src="static/images/construction/elite_3.jpg" class="slider-image" alt="Элит Хаус 3">
+                <img src="static/images/construction/elite_4.jpg" class="slider-image" alt="Элит Хаус 4">
+
+                <div class="slider-arrow slider-prev" role="button" tabindex="0" aria-label="Предыдущее изображение"><i class="fas fa-chevron-left"></i></div>
+                <div class="slider-arrow slider-next" role="button" tabindex="0" aria-label="Следующее изображение"><i class="fas fa-chevron-right"></i></div>
+
+                <div class="slider-nav" aria-label="Навигация по слайдам">
+                    <div class="slider-dot active" role="button" tabindex="0" aria-label="Слайд 1"></div>
+                    <div class="slider-dot" role="button" tabindex="0" aria-label="Слайд 2"></div>
+                    <div class="slider-dot" role="button" tabindex="0" aria-label="Слайд 3"></div>
+                    <div class="slider-dot" role="button" tabindex="0" aria-label="Слайд 4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" aria-label="Месторасположение">
+        <div class="container">
+            <h2 class="section-title centered">Месторасположение</h2>
+            <div class="location-info">
+                <div>
+                    <p>Местоположение жилого комплекса YANGI BOZOR RESIDENCE по праву является его визитной карточкой.
+                    </p>
+                    <p>Он находится в тихом, спокойном и уютном месте, но при этом в активном районе столицы, который
+                        предоставляет всю необходимую инфраструктуру рядом, для комфортного проживания всех членов
+                        семьи!</p>
+                    <p>Со всех сторон вы будете окружены многообразием городских учреждений, центров и заведений, где
+                        сможете в течение короткого времени решить все дела или заняться любимым делом.</p>
+                    <p>Культурные достопримечательности, спортивные клубы, торговые и медицинские центры окажутся в
+                        шаговой доступности от вас.</p>
+                    <a href="#contacts" class="btn btn-cta">Записаться на просмотр</a>
+                </div>
+                <div class="map-container">
+                    <img src="static/images/location.png" alt="Карта расположения комплекса" width="100%">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Air Quality Historical Section -->
+    <section id="air-quality-historical" aria-label="Сравнение качества воздуха">
+        <div id="air-quality-historical-container"></div>
+    </section>
+
+    <!-- Sales Offices Section -->
+    <section id="contacts" aria-label="Отделы продаж">
+        <div class="container">
+            <h2 class="section-title centered">Отделы продаж</h2>
+            <div class="contact-form-container">
+                <div class="contact-info">
+                    <h3>Свяжитесь с нами</h3>
+                    <p>Оставьте свои контактные данные, и наш менеджер свяжется с вами в ближайшее время.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Адрес</h4>
+                                <p>г. Ташкент, Янги Бозор, ул. Примерная, 123</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Телефон</h4>
+                                <p><a href="tel:+998712345678">+998 71 234 56 78</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@yangibozor.uz">info@yangibozor.uz</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Часы работы</h4>
+                                <p>Пн-Сб: 9:00 - 20:00<br>Вс: 10:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <h4>Мы в социальных сетях</h4>
+                        <div class="social-icons">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Ваше имя</label>
+                        <input type="text" id="name" class="form-control" placeholder="Введите ваше имя" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Номер телефона</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="+998 __ ___ __ __" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email (необязательно)</label>
+                        <input type="email" id="email" class="form-control" placeholder="Введите ваш email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Сообщение (необязательно)</label>
+                        <textarea id="message" class="form-control" rows="4" placeholder="Ваше сообщение"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-cta">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">YANGI BOZOR RESIDENCE</div>
+                    <p>Премиальный жилой комплекс в центре Ташкента</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Навигация</h3>
+                    <a href="#about">О проекте</a>
+                    <a href="#amenities-slider-section">Инфраструктура</a>
+                    <a href="#floor-plans">Планировки</a>
+                    <a href="#location">Месторасположение</a>
+                    <a href="#contacts">Контакты</a>
+                </div>
+                <div class="footer-contact">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> г. Ташкент, Янги Бозор</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+998712345678">+998 71 234 56 78</a></p>
+                </div>
+                <div class="footer-social">
+                    <h3>Социальные сети</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 YANGI BOZOR RESIDENCE. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="static/js/utils/helpers.js"></script>
+    <script src="static/js/components/navigation.js"></script>
+    <script src="static/js/components/hero-slider.js"></script>
+    <script src="static/js/components/carousel.js"></script>
+    <script src="static/js/components/floor-plans.js"></script>
+    <script src="static/js/components/project-slider.js"></script>
+    <script src="static/js/components/air-quality.js"></script>
+    <script src="static/js/components/air-quality-historical.js"></script>
+    <script src="static/js/enhancements.js"></script>
+    <script src="static/js/main.js"></script>
+    
+    <!-- Initialize Air Quality Widget -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // OpenWeatherMap API key
+            const apiKey = 'deb4e5e7881a93fbde4526c113e4394a';
+            
+            // Initialize air quality widget with only Yangi Bozor location
+            const airQuality = new AirQualityIndex(apiKey, [
+                { name: 'Янги Бозор', lat: 41.315356, lon: 69.533471 }
+            ]);
+            airQuality.init('air-quality-container');
+            
+            // Initialize historical air quality chart with only Yangi Bozor location
+            const airQualityHistorical = new AirQualityHistorical([
+                { name: 'Янги Бозор', lat: 41.315356, lon: 69.533471 }
+            ]);
+            airQualityHistorical.init('air-quality-historical-container');
+        });
+    </script>
+</body>
+
+</html>

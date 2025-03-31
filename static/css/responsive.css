@@ -1,0 +1,405 @@
+/* Media Queries */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 1000px;
+        padding: 0 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+    .residential-info {
+        padding: 40px;
+    }
+
+    .infinite-carousel .slide-card {
+        min-width: 260px;
+        height: 320px;
+    }
+
+    .footer-content {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .cozy-corner-content {
+        flex-direction: column;
+    }
+
+    .cozy-text {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .cozy-images {
+        width: 100%;
+    }
+
+    .location-info {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .residential-info {
+        flex-direction: column;
+    }
+
+    .info-content {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .info-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .info-images img {
+        height: 250px;
+    }
+
+    .floor-plan-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .construction-progress-slider {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .progress-card {
+        flex: 0 0 calc(50% - 20px);
+        margin-bottom: 20px;
+    }
+
+    .slider-container {
+        width: 90%;
+        height: 70vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.97);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 80px 0;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 1;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+        padding: 10px 0;
+    }
+
+    .residential-info {
+        padding: 30px 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .cozy-images {
+        height: 400px;
+    }
+
+    .image-top {
+        width: 85%;
+        height: 250px;
+    }
+
+    .image-bottom {
+        width: 75%;
+        height: 220px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .infinite-carousel .slide-card {
+        min-width: 240px;
+        height: 280px;
+    }
+
+    @keyframes carousel {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-240px * 4 - 80px));
+        }
+    }
+
+    .plan-info {
+        top: 15px;
+        right: 15px;
+    }
+
+    .apartment-number {
+        font-size: 30px;
+    }
+
+    .floor-plan-main {
+        padding: 15px;
+    }
+
+    .slider-container {
+        width: 95%;
+        height: 60vh;
+    }
+
+    .slider-arrow {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .section-title {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .residential-info {
+        padding: 25px 15px;
+        border-radius: 15px;
+    }
+
+    .info-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+        padding-left: 35px;
+    }
+
+    .info-title::before {
+        font-size: 26px;
+    }
+
+    .residential-info li {
+        padding: 12px 15px 12px 35px;
+        margin: 8px 0;
+    }
+
+    .info-images {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .info-images img {
+        height: 200px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .cozy-text .section-title {
+        font-size: 26px;
+    }
+
+    .cozy-images {
+        height: 350px;
+    }
+
+    .image-top {
+        width: 90%;
+        height: 200px;
+    }
+
+    .image-bottom {
+        width: 80%;
+        height: 180px;
+    }
+
+    .infinite-carousel .slide-card {
+        min-width: 220px;
+        height: 260px;
+    }
+
+    @keyframes carousel {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-220px * 4 - 80px));
+        }
+    }
+
+    .footer-logo {
+        font-size: 20px;
+    }
+
+    .social-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .floor-plan-options {
+        grid-template-columns: 1fr;
+    }
+
+    .plan-info {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-top: 15px;
+    }
+
+    .floor-plan-main {
+        padding: 10px;
+    }
+
+    .progress-card {
+        flex: 0 0 100%;
+    }
+
+    .slider-container {
+        width: 95%;
+        height: 50vh;
+    }
+
+    .slider-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-content h1 {
+        font-size: 26px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .residential-info {
+        padding: 20px 12px;
+    }
+
+    .info-title {
+        font-size: 22px;
+    }
+
+    .infinite-carousel .slide-card {
+        min-width: 200px;
+        height: 230px;
+    }
+
+    @keyframes carousel {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-200px * 4 - 80px));
+        }
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .footer-logo {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .social-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .footer-bottom {
+        margin-top: 30px;
+        padding-top: 15px;
+    }
+}

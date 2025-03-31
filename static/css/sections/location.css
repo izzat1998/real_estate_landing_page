@@ -1,0 +1,16 @@
+/* Location Section Styles */
+#location {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-color: #f9f9f9;
+}
+
+.location-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}

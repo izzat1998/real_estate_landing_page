@@ -1,0 +1,38 @@
+/* Navigation Styles */
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #4A4A4A;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s;
+    outline: none; /* Remove the outline on focus */
+}
+
+.nav-links a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #A0A0A0;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover {
+    color: #000;
+}
+
+.nav-links a:hover:after {
+    width: 100%;
+}
+
+/* Remove the green border on focus */
+.nav-links a:focus {
+    outline: none;
+}

@@ -21,20 +21,48 @@
     .footer-content {
         gap: 30px;
     }
+    
+    /* Cozy Corner Responsive */
+    .cozy-text .section-title {
+        font-size: 34px;
+    }
+    
+    .cozy-images {
+        height: 450px;
+    }
 }
 
 @media (max-width: 992px) {
     .cozy-corner-content {
         flex-direction: column;
+        gap: 30px;
     }
 
     .cozy-text {
         padding-right: 0;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    
+    .cozy-text .section-title {
+        font-size: 32px;
     }
 
     .cozy-images {
         width: 100%;
+        min-height: 400px;
+        margin: 0 auto;
+    }
+    
+    .image-top {
+        width: 80%;
+        height: 280px;
+        margin-bottom: 15px;
+    }
+    
+    .image-bottom {
+        width: 70%;
+        height: 240px;
     }
 
     .location-info {
@@ -83,21 +111,21 @@
         width: 90%;
         height: 70vh;
     }
-
+    
     /* Added for better responsiveness */
     .amenities-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
+    
     .contact-form-container {
         flex-direction: column;
     }
-
+    
     .contact-form {
         width: 100%;
         margin-bottom: 30px;
     }
-
+    
     .contact-methods {
         width: 100%;
     }
@@ -131,8 +159,7 @@
         padding: 80px 0;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
         transition: right 0.3s ease;
-        z-index: 101;
-        /* Higher than air quality widget */
+        z-index: 1;
     }
 
     .nav-links.active {
@@ -148,19 +175,40 @@
         padding: 30px 20px;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     }
+    
+    /* Cozy Corner Section Responsive */
+    .cozy-corner-section {
+        padding: 70px 0;
+    }
+    
+    .cozy-text .section-title {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    
+    .cozy-text p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+    
+    .cozy-text .btn-cta {
+        width: 100%;
+        padding: 12px 20px;
+    }
 
     .cozy-images {
-        height: 400px;
+        min-height: 350px;
     }
 
     .image-top {
         width: 85%;
-        height: 250px;
+        height: 220px;
+        margin-bottom: 15px;
     }
 
     .image-bottom {
         width: 75%;
-        height: 220px;
+        height: 200px;
     }
 
     .hero-content h1 {
@@ -216,38 +264,29 @@
         width: 40px;
         height: 40px;
     }
-
+    
     /* Added for better responsiveness */
     .amenities-grid {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-
+    
     .feature-card {
         padding: 20px;
     }
-
+    
     .feature-icon {
         width: 50px;
         height: 50px;
     }
-
+    
     .contact-method {
         padding: 15px;
     }
-
+    
     .footer-content {
         grid-template-columns: 1fr;
         gap: 30px;
-    }
-
-    /* Fix for the air quality widget in hero section */
-    .hero .air-quality-container {
-        position: static;
-        width: auto;
-        max-width: none;
-        margin: 0;
-        transform: none;
     }
 }
 
@@ -255,105 +294,148 @@
     .container {
         padding: 0 15px;
     }
-
+    
     .logo {
         font-size: 18px;
     }
-
+    
     .header-contact {
         display: none;
     }
-
+    
     .hero-content h1 {
         font-size: 30px;
     }
-
+    
     .hero-content p {
         font-size: 14px;
     }
-
+    
     .hero-cta-button {
         font-size: 14px;
         padding: 10px 20px;
     }
-
+    
     .section-title {
         font-size: 26px;
         margin-bottom: 30px;
     }
-
+    
+    /* Cozy Corner Section Responsive */
+    .cozy-corner-section {
+        padding: 50px 0;
+    }
+    
+    .cozy-text .section-title {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    
+    .cozy-text p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    .cozy-images {
+        min-height: 300px;
+    }
+    
+    .image-top {
+        width: 90%;
+        height: 180px;
+        margin-bottom: 10px;
+    }
+    
+    .image-bottom {
+        width: 80%;
+        height: 160px;
+    }
+    
     .residential-info {
         padding: 20px 15px;
     }
-
+    
     .info-images {
         grid-template-columns: 1fr;
     }
-
+    
     .info-images img {
         height: 200px;
     }
-
+    
     .slider-container {
         height: 50vh;
     }
-
+    
     .slider-controls {
         bottom: 10px;
     }
-
+    
     .slider-caption {
         bottom: 60px;
         left: 20px;
         right: 20px;
     }
-
+    
     .slider-caption h2 {
         font-size: 24px;
     }
-
+    
     .contact-icon {
         width: 40px;
         height: 40px;
     }
-
+    
     .contact-form {
         padding: 20px 15px;
     }
-
+    
     .form-group {
         margin-bottom: 15px;
     }
-
-    input,
-    textarea {
+    
+    input, textarea {
         padding: 12px;
     }
 }
 
 @media (max-width: 400px) {
+    .cozy-corner-section {
+        padding: 40px 0;
+    }
+    
+    .cozy-text .section-title {
+        font-size: 22px;
+    }
+    
+    .cozy-text p {
+        font-size: 13px;
+    }
+    
     .cozy-images {
-        height: 350px;
+        min-height: 250px;
     }
-
+    
     .image-top {
-        width: 90%;
-        height: 200px;
+        width: 95%;
+        height: 150px;
+        margin-bottom: 10px;
     }
-
+    
     .image-bottom {
-        width: 80%;
-        height: 180px;
+        width: 85%;
+        height: 130px;
     }
-
+    
     .hero-content h1 {
         font-size: 26px;
     }
-
+    
     .social-icons a {
         margin: 0 5px;
     }
-
+    
     .footer-bottom p {
         font-size: 12px;
     }

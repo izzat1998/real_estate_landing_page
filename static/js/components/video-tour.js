@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (videoPlaceholder) {
         videoPlaceholder.addEventListener('click', function() {
             // Set video source - replace this with your actual video URL
-            propertyVideo.src = 'https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1';
+            propertyVideo.src = 'https://www.youtube.com/embed/pOmuzTDGCjU?autoplay=1';
             
             // Show iframe and hide placeholder
             propertyVideo.style.display = 'block';

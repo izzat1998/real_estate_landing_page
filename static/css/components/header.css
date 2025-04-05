@@ -32,3 +32,32 @@ header {
     z-index: 2;
     color: #4A4A4A;
 }
+
+/* Improve mobile menu toggle and header for mobile */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    header {
+        padding: 10px 0;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+    
+    .navbar {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        font-size: 18px;
+    }
+    
+    .mobile-menu-toggle {
+        font-size: 22px;
+    }
+}

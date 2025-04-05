@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap file location
+Sitemap: https://yangi-bozor.uz/sitemap.xml
+
+# Specific pages to disallow
+Disallow: /static/js/config.js

@@ -1,0 +1,82 @@
+# Yangi Bozor Residence - Real Estate Landing Page
+
+## Project Structure
+- Root directory: Contains index.html and supporting config files
+- /static/: Main directory for all assets
+  - /static/css/: CSS files organized in modular structure
+    - /base/: Base styles and resets
+    - /components/: Reusable component styles
+    - /sections/: Page section-specific styles
+  - /static/js/: JavaScript files
+    - /components/: Modular JS components
+    - main.js: Core functionality
+    - config.js: Configuration parameters
+    - enhancements.js: Additional features
+  - /static/images/: Image assets
+
+## Technologies
+- HTML5 semantic markup
+- CSS3 with modular organization
+- Vanilla JavaScript (no frameworks)
+- Font Awesome 6.0.0 for icons
+- Google Fonts (Open Sans, Playfair Display)
+- Chart.js for data visualization
+
+## Components
+1. Hero Slider
+   - Auto rotation (8-second intervals)
+   - Pause on hover functionality
+   - Touch swipe support
+   - Parallax effects on desktop
+   - Dot navigation
+
+2. Navigation
+   - Sticky header with scroll effects
+   - Mobile hamburger menu
+   - Smooth scrolling to sections
+
+3. Floor Plans Interface
+   - Interactive apartment selection
+   - Dynamic display of apartment details
+   - Plan image switching
+
+4. Project Galleries
+   - Modal sliders for projects
+   - Next/previous controls
+   - Keyboard navigation
+
+5. Weather Integration
+   - OpenWeather API
+   - Location configuration in config.js
+   - Historical data visualization
+
+6. Interactive Features
+   - Back to top button
+   - Language toggle (RU/EN)
+   - Interactive map with points of interest
+   - Floating contact button
+   - Infinite carousel for amenities
+
+## Accessibility Features
+- Skip to content link
+- ARIA labels
+- Keyboard navigation support
+- Screen reader considerations
+- Alt text for images
+
+## Responsive Design
+- Mobile-first approach
+- Breakpoints for various screen sizes
+- Touch-friendly interactions on mobile
+- Optimized images and content display
+
+## Third-Party Services
+- OpenWeather API for weather data
+- Font Awesome for iconography
+- Google Fonts for typography
+
+## Performance Considerations
+- Debounced event handlers
+- Throttled scroll listeners
+- Image optimization
+- Animation performance tuning

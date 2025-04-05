@@ -80,3 +80,54 @@ footer input[type="email"] {
     border: none;
     border-radius: 5px;
 }
+
+/* Responsive mobile styles for footer */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+    
+    .footer-logo {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    footer {
+        padding: 40px 0 20px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        text-align: center;
+    }
+    
+    .footer-about {
+        margin-bottom: 10px;
+    }
+    
+    .social-icons {
+        gap: 15px;
+        justify-content: center;
+    }
+    
+    .social-icons a {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+    
+    footer ul li {
+        margin-bottom: 8px;
+    }
+    
+    .footer-logo {
+        margin-bottom: 15px;
+    }
+    
+    .footer-bottom {
+        margin-top: 30px;
+    }
+}

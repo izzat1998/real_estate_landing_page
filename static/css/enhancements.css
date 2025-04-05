@@ -177,6 +177,26 @@ body::before {
     box-shadow: var(--shadow-dark);
 }
 
+/* Mobile optimization for back-to-top button */
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 100px; /* Position above the floating CTA */
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 576px) {
+    .back-to-top {
+        bottom: 90px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
 /* ===== ENHANCED SECTION STYLES ===== */
 .section-title {
     position: relative;
@@ -423,12 +443,12 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
 /* ===== CONTACT FLOATING BUTTON ===== */
 .contact-float {
     position: fixed;
-    bottom: 30px;
+    bottom: 80px;
     left: 30px;
     background-color: var(--accent-color);
     color: white;
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     display: flex;
     align-items: center;

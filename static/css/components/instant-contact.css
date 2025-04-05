@@ -1,0 +1,152 @@
+/* Instant Contact Buttons */
+.instant-contact {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 99;
+}
+
+.instant-contact-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: white;
+    position: relative;
+}
+
+.instant-contact-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.instant-contact-button i {
+    font-size: 24px;
+}
+
+.instant-contact-button.whatsapp {
+    background-color: #25D366;
+}
+
+.instant-contact-button.telegram {
+    background-color: #0088cc;
+}
+
+.instant-contact-button.phone {
+    background-color: #A48444;
+}
+
+.instant-contact-label {
+    position: absolute;
+    right: 70px;
+    background: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #333;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: translateX(10px);
+}
+
+.instant-contact-button:hover .instant-contact-label {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.contact-toggle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #A48444;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, background-color 0.3s;
+    z-index: 1;
+}
+
+.contact-toggle i {
+    font-size: 24px;
+    transition: transform 0.3s;
+}
+
+.instant-contact.active .contact-toggle i {
+    transform: rotate(135deg);
+}
+
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: transform 0.3s, opacity 0.3s;
+    transform: translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+}
+
+.instant-contact.active .contact-buttons {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Responsive styles for instant contact buttons */
+@media (max-width: 768px) {
+    .instant-contact {
+        bottom: 20px;
+        right: 20px;
+        gap: 10px;
+    }
+    
+    .instant-contact-button,
+    .contact-toggle {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .instant-contact-button i,
+    .contact-toggle i {
+        font-size: 20px;
+    }
+    
+    .instant-contact-label {
+        display: none; /* Hide labels on mobile to prevent overlap */
+    }
+}
+
+@media (max-width: 576px) {
+    .instant-contact {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    /* Adjust position when floating form is visible to prevent overlap */
+    .floating-form-container.visible ~ .instant-contact {
+        bottom: 80px;
+    }
+    
+    .instant-contact-button,
+    .contact-toggle {
+        width: 45px;
+        height: 45px;
+    }
+}

@@ -1,0 +1,225 @@
+/* Enhanced CTA Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    min-width: 200px;
+    font-size: 16px;
+    z-index: 1;
+}
+
+.btn i {
+    margin-left: 8px;
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover i {
+    transform: translateX(4px);
+}
+
+.btn-primary {
+    background-color: #A48444;
+    color: white;
+    box-shadow: 0 4px 15px rgba(164, 132, 68, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: #8E7038;
+    box-shadow: 0 6px 20px rgba(164, 132, 68, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(164, 132, 68, 0.3);
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+    transition: left 0.7s ease;
+    z-index: -1;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.btn-secondary:hover {
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Updated hero-cta container */
+.hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Urgency indicator */
+.cta-urgency {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #D0343A;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s infinite;
+}
+
+.cta-urgency i {
+    margin-right: 8px;
+    color: #D0343A;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(208, 52, 58, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(208, 52, 58, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(208, 52, 58, 0);
+    }
+}
+
+/* Download Brochure Button */
+.download-brochure {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.download-brochure i {
+    margin-right: 10px;
+    color: #A48444;
+    font-size: 18px;
+}
+
+.download-brochure:hover {
+    background-color: #f9f9f9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Floating CTAs for mobile */
+.floating-cta-container {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 10px 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.floating-cta-text {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+}
+
+.floating-cta-text span {
+    color: #D0343A;
+    font-weight: 700;
+}
+
+.floating-cta-button {
+    background-color: #A48444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.floating-cta-button:hover {
+    background-color: #8E7038;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .floating-cta-container {
+        display: flex;
+    }
+    
+    .btn {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .hero-cta {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .floating-cta-container {
+        padding: 8px 15px;
+    }
+    
+    .floating-cta-text {
+        font-size: 13px;
+        max-width: 50%;
+    }
+    
+    .floating-cta-button {
+        padding: 8px 15px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+    
+    /* Ensure the instant contact buttons don't overlap with the CTA */
+    .instant-contact {
+        bottom: 80px;
+    }
+}

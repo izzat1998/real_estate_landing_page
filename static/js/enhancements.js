@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize back to top button
     initBackToTop();
     
-    // Initialize language toggle
-    initLanguageToggle();
     
     // Initialize interactive map
     initInteractiveMap();

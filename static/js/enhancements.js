@@ -158,17 +158,13 @@ function initContactFloat() {
     contactFloat.innerHTML = `
         <i class="fas fa-comments"></i>
         <div class="contact-options">
-            <a href="tel:+998712345678" class="contact-option">
+            <a href="tel:+998333034004" class="contact-option">
                 <i class="fas fa-phone"></i>
-                <span>+998 71 234 5678</span>
+                <span>+998 33 303 4004</span>
             </a>
             <a href="https://t.me/yangibozor_residence_uylari" class="contact-option">
                 <i class="fab fa-telegram"></i>
                 <span>Telegram</span>
-            </a>
-            <a href="mailto:info@yangibozor.uz" class="contact-option">
-                <i class="fas fa-envelope"></i>
-                <span>Email</span>
             </a>
         </div>
     `;

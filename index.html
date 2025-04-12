@@ -17,6 +17,65 @@
     <link rel="canonical" href="https://yangi-bozor.uz">
     <title>YANGI BOZOR RESIDENCE | Премиальный жилой комплекс c чистым воздухом</title>
     <link rel="stylesheet" href="static/css/main.css">
+    <script>
+        // Direct mobile menu toggle function
+        function toggleMobileMenu(e) {
+            e.preventDefault();
+            e.stopPropagation(); // Prevent event bubbling
+            
+            const navLinks = document.querySelector('.nav-links');
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (navLinks && mobileToggle) {
+                navLinks.classList.toggle('active');
+                
+                // Toggle icon between bars and X
+                const icon = mobileToggle.querySelector('i');
+                if (icon) {
+                    if (navLinks.classList.contains('active')) {
+                        icon.className = 'fas fa-times';
+                    } else {
+                        icon.className = 'fas fa-bars';
+                    }
+                }
+                
+                // Toggle body scroll
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+                
+                // Add document click handler to close menu when clicking outside
+                if (navLinks.classList.contains('active')) {
+                    setTimeout(function() {
+                        document.addEventListener('click', closeMenuOutside);
+                    }, 10);
+                }
+            }
+        }
+        
+        // Close menu when clicking outside
+        function closeMenuOutside(e) {
+            const navLinks = document.querySelector('.nav-links');
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (navLinks && mobileToggle && 
+                !navLinks.contains(e.target) && 
+                !mobileToggle.contains(e.target)) {
+                
+                navLinks.classList.remove('active');
+                
+                // Reset icon
+                const icon = mobileToggle.querySelector('i');
+                if (icon) {
+                    icon.className = 'fas fa-bars';
+                }
+                
+                // Reset body scroll
+                document.body.style.overflow = '';
+                
+                // Remove this event listener
+                document.removeEventListener('click', closeMenuOutside);
+            }
+        }
+    </script>
     <link rel="stylesheet" href="static/css/enhancements.css">
     <link rel="stylesheet" href="static/css/components/air-quality-historical.css">
     <link
@@ -36,7 +95,7 @@
         <div class="container">
             <div class="navbar">
                 <div class="logo">YANGI BOZOR RESIDENCE</div>
-                <div class="mobile-menu-toggle" aria-label="Открыть меню">
+                <div class="mobile-menu-toggle" aria-label="Открыть меню" onclick="toggleMobileMenu(event)">
                     <i class="fas fa-bars"></i>
                 </div>
                 <nav aria-label="Основная навигация">
@@ -789,6 +848,34 @@
     <script src="static/js/config.js"></script>
     <script src="static/js/components/air-quality-historical.js"></script>
     <script src="static/js/main.js"></script>
+    <script>
+        // Direct fix for mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileToggle && navLinks) {
+                mobileToggle.addEventListener('click', function(e) {
+                    e.stopPropagation(); // Prevent event bubbling
+                    navLinks.classList.toggle('active');
+                    this.innerHTML = navLinks.classList.contains('active') ? 
+                        '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+                    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+                });
+                
+                // Ensure menu closes when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (navLinks.classList.contains('active') && 
+                        !navLinks.contains(e.target) && 
+                        !mobileToggle.contains(e.target)) {
+                        navLinks.classList.remove('active');
+                        mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+        });
+    </script>
     <script src="static/js/enhancements.js"></script>
     <script src="static/js/structured-data.js"></script>
     

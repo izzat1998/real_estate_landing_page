@@ -376,12 +376,8 @@
                     <div class="project-name">Премиум Резиденс</div>
                     <div class="project-stats">
                         <div class="stat-item">
-                            <span class="stat-value">120</span>
+                            <span class="stat-value">30</span>
                             <span class="stat-label">Квартир</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value">8,500</span>
-                            <span class="stat-label">м² продано</span>
                         </div>
                     </div>
                 </div>
@@ -392,10 +388,6 @@
                         <div class="stat-item">
                             <span class="stat-value">85</span>
                             <span class="stat-label">Квартир</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value">6,200</span>
-                            <span class="stat-label">м² продано</span>
                         </div>
                     </div>
                 </div>
@@ -723,7 +715,7 @@
                     </div>
                 </div>
                 
-                <form class="contact-form">
+                <form class="contact-form" data-amo-form="contact">
                     <div class="form-group">
                         <label for="name" class="form-label">Ваше имя</label>
                         <input type="text" id="name" class="form-control" placeholder="Введите ваше имя" required>
@@ -815,7 +807,7 @@
         </div>
         <div class="floating-form-body">
             <p>Оставьте свои контактные данные, и мы вышлем вам полный каталог планировок с ценами.</p>
-            <form id="floatingLeadForm">
+            <form id="floatingLeadForm" data-amo-form="floating">
                 <input type="text" placeholder="Ваше имя" required>
                 <input type="tel" placeholder="Ваш телефон" required>
                 <input type="email" placeholder="Ваш email" required>
@@ -878,8 +870,50 @@
     </script>
     <script src="static/js/enhancements.js"></script>
     <script src="static/js/structured-data.js"></script>
-    
-
+    <script src="static/js/components/amo-integration.js"></script>
+    <!-- amoCRM Pixel Identifier -->
+    <script type="text/javascript" id="amo_pixel_identifier_js" async="async"
+            src="https://piper.amocrm.ru/pixel/js/identifier/pixel_identifier.js"></script>
+    <script>
+        // Initialize amoCRM visitor tracking
+        window.AMOPIXEL_IDENTIFIER_PARAMS = window.AMOPIXEL_IDENTIFIER_PARAMS || {};
+        window.AMOPIXEL_IDENTIFIER_PARAMS.onload = function(pixel_identifier) {
+            var visitor_uid = pixel_identifier.getVisitorUid();
+            console.log('visitor_uid', visitor_uid);
+            
+            // Add visitor_uid to all forms on the page
+            if (visitor_uid) {
+                document.querySelectorAll('form').forEach(function(form) {
+                    // Check if the form already has a visitor_uid field
+                    if (!form.querySelector('input[name="visitor_uid"]')) {
+                        // Create hidden input for visitor_uid
+                        var hiddenField = document.createElement('input');
+                        hiddenField.type = 'hidden';
+                        hiddenField.name = 'visitor_uid';
+                        hiddenField.value = visitor_uid;
+                        form.appendChild(hiddenField);
+                    } else {
+                        // Update existing field
+                        form.querySelector('input[name="visitor_uid"]').value = visitor_uid;
+                    }
+                });
+                
+                // Store visitor_uid in localStorage for persistence
+                localStorage.setItem('amo_visitor_uid', visitor_uid);
+            }
+        };
+        
+        // Helper function to get visitor UID for API calls
+        function getAmoVisitorUid() {
+            // Try to get from AMOPIXEL_IDENTIFIER first
+            if (window.AMOPIXEL_IDENTIFIER && typeof window.AMOPIXEL_IDENTIFIER.getVisitorUid === 'function') {
+                return window.AMOPIXEL_IDENTIFIER.getVisitorUid();
+            }
+            
+            // Fall back to localStorage if available
+            return localStorage.getItem('amo_visitor_uid');
+        }
+    </script>
 </body>
 
 </html>
